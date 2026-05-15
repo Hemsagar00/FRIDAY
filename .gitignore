@@ -1,0 +1,68 @@
+# .gitignore for FRIDAY
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.sqlite
+
+# Logs
+*.log
+logs/
+
+# Config (user-specific)
+friday.yaml
+.env
+
+# ChromaDB
+chroma_data/
+
+# Node (if UI is built)
+node_modules/
+dist/
+
+# Test artifacts
+.coverage
+pytest_cache/
+htmlcov/
+
+# Secrets
+secrets.json
+*_token*
+credentials.json
