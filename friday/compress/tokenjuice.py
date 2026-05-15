@@ -52,3 +52,20 @@ def compress_payload(text: str, max_size: int = 3000) -> str:
         text = text[:max_size] + "\n\n[... compressed: truncated]"
     
     return text
+
+
+def compress_text(text: str, max_len: int = 3000) -> str:
+    """CLI-friendly wrapper for compress_payload."""
+    return compress_payload(text, max_size=max_len)
+
+
+def compress_url(url: str, max_len: int = 3000) -> str:
+    """Fetch and compress a web page."""
+    import urllib.request
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (FRIDAY)"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            html = resp.read().decode("utf-8", errors="ignore")
+            return compress_payload(html, max_size=max_len)
+    except Exception as e:
+        return f"Error: {e}"
